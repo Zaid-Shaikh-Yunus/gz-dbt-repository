@@ -16,6 +16,7 @@ sources:
 
          - name: orders_id
            description: orders identification
+           
 
          - name: pdt_id
            description: products identification
@@ -33,6 +34,9 @@ sources:
          columns:
          - name: products_id
            description: products identificator
+           tests:
+           - not_null
+           - unique  
 
          - name: purchSE_PRICE
            description: price of each purchase
@@ -44,6 +48,9 @@ sources:
          columns:
          - name: orders_id
            description: orders identification
+           tests:
+           - not_null
+           - unique           
 
          - name: shippin_fee
            description: shipping cost fee
@@ -53,3 +60,5 @@ sources:
 
          - name: ship_cost
            description: shipping cost 
+
+           
