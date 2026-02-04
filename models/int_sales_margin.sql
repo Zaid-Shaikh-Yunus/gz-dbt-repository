@@ -9,4 +9,4 @@ SELECT
     s.revenue - (s.quantity * p.purchase_price) AS margin
 FROM {{ ref('stg_gz_raw_data__sales') }} s
 LEFT JOIN {{ ref('stg_gz_raw_data__product') }} p
-USING (products_id);
+USING (products_id)
