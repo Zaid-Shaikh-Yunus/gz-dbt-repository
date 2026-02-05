@@ -137,5 +137,122 @@ sources:
            - name: click
              description: "Nombre de clics"
 
+models:
+  - name: int_campaigns
+    description:
+      Modèle intermédiaire qui combine toutes les campagnes publicitaires
+      provenant de Google Ads, Bing, Criteo et Facebook. 
+      Toutes les colonnes ont été harmonisées et les coûts convertis en float64.
+    columns:
+      - name: date_date
+        description: "Date de la donnée de campagne"
+        tests:
+          - not_null
+      - name: paid_source
+        description: "Type de source payante (adwords, bing, criteo, facebook)"
+        tests:
+          - not_null
+      - name: campaign_key
+        description: "Identifiant unique de la campagne"
+        tests:
+          - not_null
+      - name: campaign_name
+        description: "Nom de la campagne publicitaire"
+        tests:
+          - not_null
+      - name: ads_cost
+        description: "Coût de la campagne converti en float64"
+        tests:
+          - not_null
+      - name: impression
+        description: "Nombre d'impressions"
+        tests:
+          - not_null
+      - name: click
+        description: "Nombre de clics"
+        tests:
+          - not_null
+      - name: campaign_key
+        description: campaign identifier
+        tests:
+        - not_null
+        - unique
+
+        models:
+  - name: int_campaigns_day
+    description: Daily aggregated advertising campaigns metrics
+    columns:
+      - name: date_date
+        description: Campaign date
+        tests:
+          - not_null
+          - unique
+
+      - name: ads_cost
+        description: Total advertising cost per day
+        tests:
+          - not_null
+
+      - name: impression
+        description: Total number of impressions per day
+        tests:
+          - not_null
+
+      - name: click
+        description: Total number of clicks per day
+        tests:
+          - not_null
+
+models:
+  - name: finance_ads_days
+    description: Daily finance and advertising metrics with ads margin calculation
+    columns:
+      - name: date
+        description: Day of activity
+        tests:
+          - not_null
+          - unique
+
+      - name: ads_margin
+        description: Operational margin minus advertising cost
+
+      - name: average_basket
+        description: Average basket value
+
+      - name: operational_margin
+        description: Operational margin after logistics and shipping costs
+
+      - name: ads_cost
+        description: Total advertising cost for the day
+
+      - name: ads_impression
+        description: Total advertising impressions for the day
+
+      - name: ads_clicks
+        description: Total advertising clicks for the day
+
+      - name: quantity
+        description: Total quantity sold
+
+      - name: revenue
+        description: Total revenue
+
+      - name: purchase_cost
+        description: Total purchase cost
+
+      - name: margin
+        description: Commercial margin
+
+      - name: shipping_fee
+        description: Total shipping fees charged to customers
+
+      - name: log_cost
+        description: Total logistic costs
+
+      - name: ship_cost
+        description: Total shipping costs
+
+        
+
       
 
