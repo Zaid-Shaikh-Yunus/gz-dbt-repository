@@ -156,6 +156,8 @@ models:
         description: "Identifiant unique de la campagne"
         tests:
           - not_null
+          - unique
+          
       - name: campaign_name
         description: "Nom de la campagne publicitaire"
         tests:
@@ -176,9 +178,8 @@ models:
         description: campaign identifier
         tests:
         - not_null
-        - unique
+        
 
-        models:
   - name: int_campaigns_day
     description: Daily aggregated advertising campaigns metrics
     columns:
@@ -203,8 +204,7 @@ models:
         tests:
           - not_null
 
-models:
-  - name: finance_ads_days
+  - name: finance_campaigns_day
     description: Daily finance and advertising metrics with ads margin calculation
     columns:
       - name: date
