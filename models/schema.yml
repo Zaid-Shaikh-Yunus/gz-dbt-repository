@@ -1,0 +1,64 @@
+
+version: 2
+
+sources:
+   - name: gz_raw_data
+     database: zaid-dbt
+     schema: gz_raw_data
+     loader: bigquery
+     tables:
+       - name: sales
+         identifier: raw_gz_sales
+         description: sales of Greenweez / we have on row per product_id found in each orders_id
+         columns: 
+         - name: date_date
+           description: date of purchase
+
+         - name: orders_id
+           description: orders identification
+           
+
+         - name: pdt_id
+           description: products identification
+
+         - name: revenue
+           description: amount of revenue
+
+         - name: quantity
+           description: amount of quantity    
+
+       - name: product
+         identifier: raw_gz_product
+         description: products of Greenweez / we have one row corresponding of each product 
+
+         columns:
+         - name: products_id
+           description: products identificator
+           tests:
+           - not_null
+           - unique  
+
+         - name: purchSE_PRICE
+           description: price of each purchase
+
+       - name: ship
+         identifier: raw_gz_ship
+         description: detail ok shipment at greenweez / each row represent shipping cost
+
+         columns:
+         - name: orders_id
+           description: orders identification
+           tests:
+           - not_null
+           - unique           
+
+         - name: shippin_fee
+           description: shipping cost fee
+
+         - name: log_cost
+           description: logistic code
+
+         - name: ship_cost
+           description: shipping cost 
+
+           
