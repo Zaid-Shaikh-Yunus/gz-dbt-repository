@@ -61,4 +61,81 @@ sources:
          - name: ship_cost
            description: shipping cost 
 
-           
+       - name: adwords
+         identifier: raw_gz_adwords
+         description: "Données de campagne publicitaire Google AdWords"
+         columns:
+           - name: date_date
+             description: "Date de la donnée"
+           - name: paid_source
+             description: "Type de source payante"
+           - name: campaign_key
+             description: "Clé de la campagne"
+           - name: camPGN_name
+             description: "Nom de la campagne"
+           - name: ads_cost
+             description: "Coût de la campagne"
+           - name: impression
+             description: "Nombre d'impressions"
+           - name: click
+             description: "Nombre de clics"
+
+       - name: bing
+         identifier: raw_gz_bing         
+         description: "Données de campagne publicitaire Bing"
+         columns:
+           - name: date_date
+             description: "Date de la donnée"
+           - name: paid_source
+             description: "Type de source payante"
+           - name: campaign_key
+             description: "Clé de la campagne"
+           - name: camPGN_name
+             description: "Nom de la campagne"
+           - name: ads_cost
+             description: "Coût de la campagne"
+           - name: impression
+             description: "Nombre d'impressions"
+           - name: click
+             description: "Nombre de clics"
+
+       - name: criteo
+         identifier: raw_gz_criteo
+         description: "Données de campagne publicitaire Criteo"
+         columns:
+           - name: date_date
+             description: "Date de la donnée"
+           - name: paid_source
+             description: "Type de source payante"
+           - name: campaign_key
+             description: "Clé de la campagne"
+           - name: camPGN_name
+             description: "Nom de la campagne"
+           - name: ads_cost
+             description: "Coût de la campagne"
+           - name: impression
+             description: "Nombre d'impressions"
+           - name: click
+             description: "Nombre de clics"
+
+       - name: facebook
+         identifier: raw_gz_facebook
+         description: "Données de campagne publicitaire Facebook"
+         columns:
+           - name: date_date
+             description: "Date de la donnée"
+           - name: paid_source
+             description: "Type de source payante"
+           - name: campaign_key
+             description: "Clé de la campagne"
+           - name: camPGN_name
+             description: "Nom de la campagne"
+           - name: ads_cost
+             description: "Coût de la campagne"
+           - name: impression
+             description: "Nombre d'impressions"
+           - name: click
+             description: "Nombre de clics"
+
+      
+
